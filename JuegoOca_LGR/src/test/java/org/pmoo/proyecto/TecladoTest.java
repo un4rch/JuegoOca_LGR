@@ -15,15 +15,5 @@ public class TecladoTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
-	@Test
-	public void testGetTeclado() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testPedirOpcion() {
-		fail("Not yet implemented");
-	}
-
+	
 }

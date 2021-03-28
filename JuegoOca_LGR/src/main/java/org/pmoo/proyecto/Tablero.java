@@ -81,6 +81,7 @@ public class Tablero {
 		Ansi ansiFichaEnCasilla;
 		//ListaFichas.getListaFichas.get(0).getPosicion() //0-V,1-R,2-A,3-M
 		try {
+			/*
 			if (pInicial == 'V' && ListaFichas.getListaFichas.get(0).getPosicion() == pPosCasilla) {
 				ansiFichaEnCasilla = ansi().fg(GREEN).a("●").reset();
 			} else if (pInicial == 'R' && ListaFichas.getListaFichas.get(1).getPosicion() == pPosCasilla) {
@@ -91,7 +92,8 @@ public class Tablero {
 				ansiFichaEnCasilla = ansi().fg(MAGENTA).a("●").reset();
 			} else {
 				ansiFichaEnCasilla = ansi().fg(WHITE).a(" ").reset();
-			}
+			}*/
+			ansiFichaEnCasilla = ansi().fg(WHITE).a(" ").reset();
 		} catch (Exception e) {
 			ansiFichaEnCasilla = ansi().fg(WHITE).a(" ").reset();
 		}
