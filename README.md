@@ -3,7 +3,7 @@ Para jugar al juego hay que inicializarlo desde el ejecutable exe ya que está c
 
 Codigo del ejecutable:
 
-@echo off
+@echo off\n
 chcp 65001
 cls
 java -jar JuegoOca_LGR.jar
