@@ -46,16 +46,8 @@ public class Tablero {
 			String posicionesCarcel = this.impPosicionesCasillas("Carcel", Juego.getOpcionTablero());
 			String posicionesPension = this.impPosicionesCasillas("Pension", Juego.getOpcionTablero());
 			String posicionesPozo = this.impPosicionesCasillas("Pozo", Juego.getOpcionTablero());
-			//String posicionesNormal = "123";
-			//String posicionesMuerte = "123";
-			//String posicionesOca = "123";
-			//String posicionesPuente = "123";
-			//String posicionesDado = "123";
-			//String posicionesCarcel = "123";
-			//String posicionesPension = "123";
-			//String posicionesPozo = "123";
 			
-			outStream.println("\t\t\t\t\tEstado actual del tablero:\n\n"); //buscarCasillaPorPosicion
+			outStream.println("\t\t\t\t\tEstado actual del tablero:\n\n");
 		
 			outStream.println("                      +------+------+------+------+------+------+------+------+------+------+");
 			outStream.println("                      |  34  |  33  |  32  |  31  |  30  |  29  |  28  |  27  |  26  |  25  |");
@@ -126,7 +118,6 @@ public class Tablero {
 		Ansi ansiFichaEnCasilla;
 		//ListaFichas.getListaFichas.get(0).getPosicion() //0-V,1-R,2-A,3-M
 		try {
-			/*
 			if (pInicial == 'V' && ListaFichas.getListaFichas.get(0).getPosicion() == pPosCasilla) {
 				ansiFichaEnCasilla = ansi().fg(GREEN).a("●").reset();
 			} else if (pInicial == 'R' && ListaFichas.getListaFichas.get(1).getPosicion() == pPosCasilla) {
@@ -137,8 +128,7 @@ public class Tablero {
 				ansiFichaEnCasilla = ansi().fg(MAGENTA).a("●").reset();
 			} else {
 				ansiFichaEnCasilla = ansi().fg(WHITE).a(" ").reset();
-			}*/
-			ansiFichaEnCasilla = ansi().fg(WHITE).a(" ").reset(); //remover esta linea depués de descomentar el bloque anterior
+			}
 		} catch (Exception e) {
 			ansiFichaEnCasilla = ansi().fg(WHITE).a(" ").reset();
 		}

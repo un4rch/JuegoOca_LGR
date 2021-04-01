@@ -91,21 +91,21 @@ public class Juego {
 			while ((strCurrentLine = fileReader.readLine()) != null) {    
                 String data[] = strCurrentLine.split("_");
                 if (data[1] == "Muerte") {
-                	//ListaCasillas.añadirCasilla(new CasillaMuerte());
+                	ListaCasillas.añadirCasilla(new CasillaMuerte());
                 } else if (data[1] == "Oca") {
-                	//ListaCasillas.añadirCasilla(new CasillaDesplazarYTirar(data[2]));
+                	ListaCasillas.añadirCasilla(new CasillaDesplazarYTirar(data[2]));
                 } else if (data[1] == "Puente") {
-                	//ListaCasillas.añadirCasilla(new CasillaDesplazarYTirar(data[2]));
+                	ListaCasillas.añadirCasilla(new CasillaDesplazarYTirar(data[2]));
                 } else if (data[1] == "Dado") {
-                	//ListaCasillas.añadirCasilla(new CasillaDesplazarYTirar(data[2]));
+                	ListaCasillas.añadirCasilla(new CasillaDesplazarYTirar(data[2]));
                 } else if (data[1] == "Carcel") {
-                	//ListaCasillas.añadirCasilla(new CasillaEspera(data[2]));
+                	ListaCasillas.añadirCasilla(new CasillaEspera(data[2]));
                 } else if (data[1] == "Pension") {
-                	//ListaCasillas.añadirCasilla(new CasillaEspera(data[2]));
+                	ListaCasillas.añadirCasilla(new CasillaEspera(data[2]));
                 } else if (data[1] == "Espera") {
-                	//ListaCasillas.añadirCasilla(new CasillaEspera(data[2]));
+                	ListaCasillas.añadirCasilla(new CasillaEspera(data[2]));
                 } else {
-                	//ListaCasillas.añadirCasilla(new CasillaNormal());
+                	ListaCasillas.añadirCasilla(new CasillaNormal());
                 }
             }
 			fileReader.close();
