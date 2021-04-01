@@ -12,7 +12,7 @@ public class Teclado {
 	/**
 	 * Crea una instancia de Teclado.
 	 */
-	private void Teclado() {
+	private Teclado() {
 		
 	}
 	
@@ -42,11 +42,11 @@ public class Teclado {
 				}
 			} catch (Exception e) {
 				System.out.print(ansi().fg(RED).a("[Ø] Error: Opción no valida, intentalo de nuevo: ").reset());
-				input.next();
+				opcion = input.nextInt();
 			}
-			if (opcion >= 1 && opcion <= pNumOpciones) {
-				input.close();
-			}
+			//if (opcion >= 1 && opcion <= pNumOpciones) {
+			//	input.close();
+			//}
 		}
 		return opcion;
 	}
