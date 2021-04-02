@@ -58,10 +58,10 @@ public class Tablero {
 			outStream.println("                      +------+      +------+------+------+------+------+------+      +------+");
 			outStream.println("         Fichas:      |  36  |      |  58  |  57  |  56  |  55  |  54  |  53  |      |  23  |" + "\t\tCasillas Muerte:");
 			outStream.println("      ▬▬▬▬▬▬▬▬▬▬▬▬▬▬  | " + this.impFichaEnTablero('V', 36) + this.impFichaEnTablero('R', 36) + this.impFichaEnTablero('A', 36) + this.impFichaEnTablero('M', 36) + " |      | " + this.impFichaEnTablero('V', 58) + this.impFichaEnTablero('R', 58) + this.impFichaEnTablero('A', 58) + this.impFichaEnTablero('M', 58) + " | " + this.impFichaEnTablero('V', 57) + this.impFichaEnTablero('R', 57) + this.impFichaEnTablero('A', 57) + this.impFichaEnTablero('M', 57) + " | " + this.impFichaEnTablero('V', 56) + this.impFichaEnTablero('R', 56) + this.impFichaEnTablero('A', 56) + this.impFichaEnTablero('M', 56) + " | " + this.impFichaEnTablero('V', 55) + this.impFichaEnTablero('R', 55) + this.impFichaEnTablero('A', 55) + this.impFichaEnTablero('M', 55) + " | " + this.impFichaEnTablero('V', 54) + this.impFichaEnTablero('R', 54) + this.impFichaEnTablero('A', 54) + this.impFichaEnTablero('M', 54) + " | " + this.impFichaEnTablero('V', 53) + this.impFichaEnTablero('R', 53) + this.impFichaEnTablero('A', 53) + this.impFichaEnTablero('M', 53) + " |      | " + this.impFichaEnTablero('V', 23) + this.impFichaEnTablero('R', 23) + this.impFichaEnTablero('A', 23) + this.impFichaEnTablero('M', 23) + " |" + "\t\t  " + posicionesMuerte);
-			outStream.println("        " + impJugadoresEnTablero(1) + "   +------+      +------+------+------+------+------+------+      +------+");
-			outStream.println("        " + impJugadoresEnTablero(2) + "   |  37  |      |  59  |                           |  52  |      |  22  |" + "\t\tCasillas Oca:");
-			outStream.println("        " + impJugadoresEnTablero(3) + "   | " + this.impFichaEnTablero('V', 37) + this.impFichaEnTablero('R', 37) + this.impFichaEnTablero('A', 37) + this.impFichaEnTablero('M', 37) + " |      | " + this.impFichaEnTablero('V', 59) + this.impFichaEnTablero('R', 59) + this.impFichaEnTablero('A', 59) + this.impFichaEnTablero('M', 59) + " |                           | " + this.impFichaEnTablero('V', 52) + this.impFichaEnTablero('R', 52) + this.impFichaEnTablero('A', 52) + this.impFichaEnTablero('M', 52) + " |      | " + this.impFichaEnTablero('V', 22) + this.impFichaEnTablero('R', 22) + this.impFichaEnTablero('A', 22) + this.impFichaEnTablero('M', 22) + " |" + "\t\t  " + posicionesOca);
-			outStream.println("        " + impJugadoresEnTablero(4) + "   +------+      +------+      +--------------+     +------+      +------+");
+			outStream.println("        " + this.impJugadoresEnTablero(1) + "   +------+      +------+------+------+------+------+------+      +------+");
+			outStream.println("        " + this.impJugadoresEnTablero(2) + "   |  37  |      |  59  |                           |  52  |      |  22  |" + "\t\tCasillas Oca:");
+			outStream.println("        " + this.impJugadoresEnTablero(3) + "   | " + this.impFichaEnTablero('V', 37) + this.impFichaEnTablero('R', 37) + this.impFichaEnTablero('A', 37) + this.impFichaEnTablero('M', 37) + " |      | " + this.impFichaEnTablero('V', 59) + this.impFichaEnTablero('R', 59) + this.impFichaEnTablero('A', 59) + this.impFichaEnTablero('M', 59) + " |                           | " + this.impFichaEnTablero('V', 52) + this.impFichaEnTablero('R', 52) + this.impFichaEnTablero('A', 52) + this.impFichaEnTablero('M', 52) + " |      | " + this.impFichaEnTablero('V', 22) + this.impFichaEnTablero('R', 22) + this.impFichaEnTablero('A', 22) + this.impFichaEnTablero('M', 22) + " |" + "\t\t  " + posicionesOca);
+			outStream.println("        " + this.impJugadoresEnTablero(4) + "   +------+      +------+      +--------------+     +------+      +------+");
 			outStream.println("                      |  38  |      |  60  |      |              |     |  51  |      |  21  |" + "\t\tCasillas Puente:");
 			outStream.println("                      | " + this.impFichaEnTablero('V', 38) + this.impFichaEnTablero('R', 38) + this.impFichaEnTablero('A', 38) + this.impFichaEnTablero('M', 38) + " |      | " + this.impFichaEnTablero('V', 60) + this.impFichaEnTablero('R', 60) + this.impFichaEnTablero('A', 60) + this.impFichaEnTablero('M', 60) + " |      |      63      |     | " + this.impFichaEnTablero('V', 51) + this.impFichaEnTablero('R', 51) + this.impFichaEnTablero('A', 51) + this.impFichaEnTablero('M', 51) + " |      | " + this.impFichaEnTablero('V', 21) + this.impFichaEnTablero('R', 21) + this.impFichaEnTablero('A', 21) + this.impFichaEnTablero('M', 21) + " |" + "\t\t  " + posicionesPuente);
 			outStream.println("     +------------+   +------+      +------+------|              |     +------+      +------+");
@@ -92,7 +92,7 @@ public class Tablero {
 	 */
 	private Ansi impJugadoresEnTablero(int pNumJugador) {
 		Ansi jugadorEnCasilla = null;
-		if (pNumJugador <= Juego.getNumJugadores()) {
+		if (pNumJugador <= ListaFichas.getListaFichas().obtenerNumFichas()) {
 			if (pNumJugador == 1) {
 				jugadorEnCasilla = ansi().fg(GREEN).a("Jugador1: ●").reset();
 			} else if (pNumJugador == 2) {
@@ -116,7 +116,7 @@ public class Tablero {
 	 */
 	private Ansi impFichaEnTablero(char pInicial, int pPosCasilla) {
 		Ansi ansiFichaEnCasilla;
-		//ListaFichas.getListaFichas.get(0).getPosicion() //0-V,1-R,2-A,3-M
+		//ListaFichas.getListaFichas.get(0).getPosicion() //0-V,1-R,2-A,3-M indican los colores de los jugadores(Verde, Rojo, Azul y Magenta)
 		try {
 			if (pInicial == 'V' && ListaFichas.getListaFichas.get(0).getPosicion() == pPosCasilla) {
 				ansiFichaEnCasilla = ansi().fg(GREEN).a("●").reset();

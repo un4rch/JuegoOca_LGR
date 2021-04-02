@@ -16,7 +16,6 @@ import java.io.FileReader;
 public class Juego {
 	private static Juego miJuego = null;
 	private static int opcionTablero;
-	private static int numJugadores;
 	/**
 	 * Constructora de Juego.
 	 */
@@ -35,7 +34,7 @@ public class Juego {
 	/**
 	 * Limpia la consola de comandos o shell (clear screen).
 	 */
-	private void limpiarConsola() {
+	public void limpiarConsola() {
 		try {
 	        if (System.getProperty("os.name").contains("Windows"))
 	            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
@@ -46,25 +45,19 @@ public class Juego {
 	/**
 	 * Termina la partida saliendo del juego por completo.
 	 */
-	public static void terminarPartida() {
+	public void terminarPartida() {
 		System.exit(0);
 	}
 	/**
-	 * @return Devuelve el numero de la tematica del tablero.
+	 * @return Devuelve el numero seleccionado de la tematica del tablero.
 	 */
-	public static int getOpcionTablero() {
+	public int getOpcionTablero() {
 		return Juego.opcionTablero;
-	}
-	/**
-	 * @return Devuelve el numero de jugadores que estan activos en la partida
-	 */
-	public static int getNumJugadores() {
-		return Juego.numJugadores;
 	}
 	/**
 	 * Configura el tablero en funcion de un numero de jugadores y una tematica de tablero, los cuales el usuario escogera por consola.
 	 */
-	private void configurarTablero() {
+	public void configurarTablero() {
 		Teclado teclado = Teclado.getTeclado();
 		
 		System.out.println(ansi().fg(WHITE).a("Numero de Jugadores posibles:\n").reset());
@@ -72,7 +65,11 @@ public class Juego {
 		System.out.println(ansi().fg(WHITE).a("\t(2) Tres Jugadores.").reset());
 		System.out.println(ansi().fg(WHITE).a("\t(3) Cuatro Jugadores.\n").reset());
 		System.out.print(ansi().fg(WHITE).a("¿Cuantos jugadores van ha jugar?").reset());
-		Juego.numJugadores = teclado.pedirOpcion(3)+1;
+		int numJugadores = teclado.pedirOpcion(3)+1;
+		
+		for (int i=1; i<=numJugadores; i++) {
+			ListaFichas.añadirFicha(new Ficha("Jugador" + i));
+		}
 		
 		System.out.println(ansi().fg(WHITE).a("Modos de juego:\n").reset());
 		System.out.println(ansi().fg(WHITE).a("\t(1) Tablero Clasico.").reset());
@@ -109,11 +106,16 @@ public class Juego {
                 }
             }
 			fileReader.close();
-            Thread.sleep(1500);
+            Thread.sleep(1000);
+            System.out.println();
             System.out.println(ansi().fg(GREEN).a("[\u2713] ¡Tablero creado con exito!").reset());
 		} catch (Exception e) {
 			
 		}
+	}
+	
+	private void jugarPartida() {
+		Sin Hacer
 	}
 	/**
 	 * Metodo principal del juego, aqui es donde comienza todo la partida.
