@@ -115,7 +115,8 @@ public class Juego {
 	}
 	
 	private void jugarPartida() {
-		Sin Hacer
+		this.configurarTablero();
+		ListaFichas.jugar();
 	}
 	/**
 	 * Metodo principal del juego, aqui es donde comienza todo la partida.
