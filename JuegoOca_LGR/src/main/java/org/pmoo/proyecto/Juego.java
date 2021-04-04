@@ -51,7 +51,7 @@ public class Juego {
 	/**
 	 * @return Devuelve el numero seleccionado de la tematica del tablero.
 	 */
-	public int getOpcionTablero() {
+	public static int getOpcionTablero() {
 		return Juego.opcionTablero;
 	}
 	/**
@@ -99,7 +99,7 @@ public class Juego {
                 	ListaCasillas.añadirCasilla(new CasillaEspera(data[2]));
                 } else if (data[1] == "Pension") {
                 	ListaCasillas.añadirCasilla(new CasillaEspera(data[2]));
-                } else if (data[1] == "Espera") {
+                } else if (data[1] == "Pozo") {
                 	ListaCasillas.añadirCasilla(new CasillaEspera(data[2]));
                 } else {
                 	ListaCasillas.añadirCasilla(new CasillaNormal());
