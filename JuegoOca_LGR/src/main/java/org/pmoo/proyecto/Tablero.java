@@ -46,6 +46,7 @@ public class Tablero {
 			String posicionesCarcel = this.impPosicionesCasillas("Carcel", Juego.getOpcionTablero());
 			String posicionesPension = this.impPosicionesCasillas("Pension", Juego.getOpcionTablero());
 			String posicionesPozo = this.impPosicionesCasillas("Pozo", Juego.getOpcionTablero());
+			String posicionesVictoria = this.impPosicionesCasillas("Victoria", Juego.getOpcionTablero());
 			
 			outStream.println("\t\t\t\t\tEstado actual del tablero:\n\n");
 		
@@ -77,8 +78,8 @@ public class Tablero {
 			outStream.println("        |  04  |                                                                     |  17  |" + "\t\tCasillas Pozo:");
 			outStream.println("        | " + this.impFichaEnTablero('V', 4) + this.impFichaEnTablero('R', 4) + this.impFichaEnTablero('A', 4) + this.impFichaEnTablero('M', 4) + " |                                                                     | " + this.impFichaEnTablero('V', 17) + this.impFichaEnTablero('R', 17) + this.impFichaEnTablero('A', 17) + this.impFichaEnTablero('M', 17) + " |" + "\t\t  " + posicionesPozo);
 			outStream.println("        +------+------+------+------+------+------+------+------+------+------+------+------+");
-			outStream.println("        |  05  |  06  |  07  |  08  |  09  |  10  |  11  |  12  |  13  |  14  |  15  |  16  |");
-			outStream.println("        | " + this.impFichaEnTablero('V', 5) + this.impFichaEnTablero('R', 5) + this.impFichaEnTablero('A', 5) + this.impFichaEnTablero('M', 5) + " | " + this.impFichaEnTablero('V', 6) + this.impFichaEnTablero('R', 6) + this.impFichaEnTablero('A', 6) + this.impFichaEnTablero('M', 6) + " | " + this.impFichaEnTablero('V', 7) + this.impFichaEnTablero('R', 7) + this.impFichaEnTablero('A', 7) + this.impFichaEnTablero('M', 7) + " | " + this.impFichaEnTablero('V', 8) + this.impFichaEnTablero('R', 8) + this.impFichaEnTablero('A', 8) + this.impFichaEnTablero('M', 8) + " | " + this.impFichaEnTablero('V', 9) + this.impFichaEnTablero('R', 9) + this.impFichaEnTablero('A', 9) + this.impFichaEnTablero('M', 9) + " | " + this.impFichaEnTablero('V', 10) + this.impFichaEnTablero('R', 10) + this.impFichaEnTablero('A', 10) + this.impFichaEnTablero('M', 10) + " | " + this.impFichaEnTablero('V', 11) + this.impFichaEnTablero('R', 11) + this.impFichaEnTablero('A', 11) + this.impFichaEnTablero('M', 11) + " | " + this.impFichaEnTablero('V', 12) + this.impFichaEnTablero('R', 12) + this.impFichaEnTablero('A', 12) + this.impFichaEnTablero('M', 12) + " | " + this.impFichaEnTablero('V', 13) + this.impFichaEnTablero('R', 13) + this.impFichaEnTablero('A', 13) + this.impFichaEnTablero('M', 13) + " | " + this.impFichaEnTablero('V', 14) + this.impFichaEnTablero('R', 14) + this.impFichaEnTablero('A', 14) + this.impFichaEnTablero('M', 14) + " | " + this.impFichaEnTablero('V', 15) + this.impFichaEnTablero('R', 15) + this.impFichaEnTablero('A', 15) + this.impFichaEnTablero('M', 15) + " | " + this.impFichaEnTablero('V', 16) + this.impFichaEnTablero('R', 16) + this.impFichaEnTablero('A', 16) + this.impFichaEnTablero('M', 16) + " |");
+			outStream.println("        |  05  |  06  |  07  |  08  |  09  |  10  |  11  |  12  |  13  |  14  |  15  |  16  |" + "\t\tCasillas Victoria:");
+			outStream.println("        | " + this.impFichaEnTablero('V', 5) + this.impFichaEnTablero('R', 5) + this.impFichaEnTablero('A', 5) + this.impFichaEnTablero('M', 5) + " | " + this.impFichaEnTablero('V', 6) + this.impFichaEnTablero('R', 6) + this.impFichaEnTablero('A', 6) + this.impFichaEnTablero('M', 6) + " | " + this.impFichaEnTablero('V', 7) + this.impFichaEnTablero('R', 7) + this.impFichaEnTablero('A', 7) + this.impFichaEnTablero('M', 7) + " | " + this.impFichaEnTablero('V', 8) + this.impFichaEnTablero('R', 8) + this.impFichaEnTablero('A', 8) + this.impFichaEnTablero('M', 8) + " | " + this.impFichaEnTablero('V', 9) + this.impFichaEnTablero('R', 9) + this.impFichaEnTablero('A', 9) + this.impFichaEnTablero('M', 9) + " | " + this.impFichaEnTablero('V', 10) + this.impFichaEnTablero('R', 10) + this.impFichaEnTablero('A', 10) + this.impFichaEnTablero('M', 10) + " | " + this.impFichaEnTablero('V', 11) + this.impFichaEnTablero('R', 11) + this.impFichaEnTablero('A', 11) + this.impFichaEnTablero('M', 11) + " | " + this.impFichaEnTablero('V', 12) + this.impFichaEnTablero('R', 12) + this.impFichaEnTablero('A', 12) + this.impFichaEnTablero('M', 12) + " | " + this.impFichaEnTablero('V', 13) + this.impFichaEnTablero('R', 13) + this.impFichaEnTablero('A', 13) + this.impFichaEnTablero('M', 13) + " | " + this.impFichaEnTablero('V', 14) + this.impFichaEnTablero('R', 14) + this.impFichaEnTablero('A', 14) + this.impFichaEnTablero('M', 14) + " | " + this.impFichaEnTablero('V', 15) + this.impFichaEnTablero('R', 15) + this.impFichaEnTablero('A', 15) + this.impFichaEnTablero('M', 15) + " | " + this.impFichaEnTablero('V', 16) + this.impFichaEnTablero('R', 16) + this.impFichaEnTablero('A', 16) + this.impFichaEnTablero('M', 16) + " |" + "\t\t  " + posicionesVictoria);
 			outStream.println("        +------+------+------+------+------+------+------+------+------+------+------+------+");
 			outStream.println();
 		} catch (Exception e) {
@@ -153,21 +154,23 @@ public class Tablero {
 			int pos = 1;
 			while ((strCurrentLine = fileReader.readLine()) != null) {
 				String data[] = strCurrentLine.split("_");
-				if (pNombreCasilla == "Normal" && data[1].equals("Normal")) {
+				if (pNombreCasilla == "Normal" && data[0].equals("Normal")) {
 					posicionesCasilla.append(pos + ", ");
-				} else if (pNombreCasilla == "Muerte" && data[1].equals("Muerte")) {
+				} else if (pNombreCasilla == "Muerte" && data[0].equals("Muerte")) {
 					posicionesCasilla.append(pos + ", ");
-				} else if (pNombreCasilla == "Oca" && data[1].equals("Oca")) {
+				} else if (pNombreCasilla == "Oca" && data[0].equals("Oca")) {
 					posicionesCasilla.append(pos + ", ");
-				} else if (pNombreCasilla == "Puente" && data[1].equals("Puente")) {
+				} else if (pNombreCasilla == "Puente" && data[0].equals("Puente")) {
 					posicionesCasilla.append(pos + ", ");
-				} else if (pNombreCasilla == "Dado" && data[1].equals("Dado")) {
+				} else if (pNombreCasilla == "Dado" && data[0].equals("Dado")) {
 					posicionesCasilla.append(pos + ", ");
-				} else if (pNombreCasilla == "Carcel" && data[1].equals("Carcel")) {
+				} else if (pNombreCasilla == "Carcel" && data[0].equals("Carcel")) {
 					posicionesCasilla.append(pos + ", ");
-				} else if (pNombreCasilla == "Pension" && data[1].equals("Pension")) {
+				} else if (pNombreCasilla == "Pension" && data[0].equals("Pension")) {
 					posicionesCasilla.append(pos + ", ");
-				} else if (pNombreCasilla == "Pozo" && data[1].equals("Pozo")) {
+				} else if (pNombreCasilla == "Pozo" && data[0].equals("Pozo")) {
+					posicionesCasilla.append(pos + ", ");
+				} else if (pNombreCasilla == "Victoria" && data[0].equals("Victoria")) {
 					posicionesCasilla.append(pos + ", ");
 				}
 				pos++;

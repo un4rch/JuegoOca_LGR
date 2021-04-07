@@ -1,7 +1,8 @@
 package org.pmoo.proyecto;
 
 public class ListaFichas {
-
+	
+	//otros metodos
     /**
 	 * Limpia la consola de comandos o shell (clear screen).
 	 */
@@ -16,7 +17,8 @@ public class ListaFichas {
     /**
 	 * Termina la partida saliendo del juego por completo.
 	 */
-	public void terminarPartida() {
+	public static void terminarPartida() {
+		System.out.println("Hasta la proxima...");
 		System.exit(0);
 	}
 }

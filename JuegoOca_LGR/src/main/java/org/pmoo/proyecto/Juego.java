@@ -71,21 +71,21 @@ public class Juego {
 			String strCurrentLine;
 			while ((strCurrentLine = fileReader.readLine()) != null) {    
                 String data[] = strCurrentLine.split("_");
-                if (data[1] == "Muerte") {
+                if (data[0] == "Muerte") {
                 	ListaCasillas.añadirCasilla(new Muerte());
-                } else if (data[1] == "Oca") {
-                	ListaCasillas.añadirCasilla(new DesplazarYTirar("", data[2]));
-                } else if (data[1] == "Puente") {
-                	ListaCasillas.añadirCasilla(new DesplazarYTirar("", data[2]));
-                } else if (data[1] == "Dado") {
-                	ListaCasillas.añadirCasilla(new DesplazarYTirar("", data[2]));
-                } else if (data[1] == "Carcel") {
-                	ListaCasillas.añadirCasilla(new Espera("", data[2]));
-                } else if (data[1] == "Pension") {
-                	ListaCasillas.añadirCasilla(new Espera("", data[2]));
-                } else if (data[1] == "Pozo") {
-                	ListaCasillas.añadirCasilla(new Espera("", data[2]));
-                } else if (data[1] == "Victoria") {
+                } else if (data[0] == "Oca") {
+                	ListaCasillas.añadirCasilla(new DesplazarYTirar("", data[1]));
+                } else if (data[0] == "Puente") {
+                	ListaCasillas.añadirCasilla(new DesplazarYTirar("", data[1]));
+                } else if (data[0] == "Dado") {
+                	ListaCasillas.añadirCasilla(new DesplazarYTirar("", data[1]));
+                } else if (data[0] == "Carcel") {
+                	ListaCasillas.añadirCasilla(new Espera("", data[1]));
+                } else if (data[0] == "Pension") {
+                	ListaCasillas.añadirCasilla(new Espera("", data[1]));
+                } else if (data[0] == "Pozo") {
+                	ListaCasillas.añadirCasilla(new Espera("", data[1]));
+                } else if (data[0] == "Victoria") {
                 	ListaCasillas.añadirCasilla(new Victoria());
                 } else {
                 	ListaCasillas.añadirCasilla(new Normal());
@@ -100,7 +100,7 @@ public class Juego {
 		}
 	}
 	
-	private void jugarPartida() {
+	public void jugarPartida() {
 		this.configurarTablero();
 		ListaFichas.jugar();
 	}
