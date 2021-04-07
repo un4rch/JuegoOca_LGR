@@ -150,25 +150,27 @@ public class Tablero {
 			} else if (pOpcionTablero == 2) {
 				fileReader = new BufferedReader(new FileReader("./tableros/TableroPersonalizado.txt"));
 			}
+			int pos = 1;
 			while ((strCurrentLine = fileReader.readLine()) != null) {
 				String data[] = strCurrentLine.split("_");
 				if (pNombreCasilla == "Normal" && data[1].equals("Normal")) {
-					posicionesCasilla.append(data[0] + ", ");
+					posicionesCasilla.append(pos + ", ");
 				} else if (pNombreCasilla == "Muerte" && data[1].equals("Muerte")) {
-					posicionesCasilla.append(data[0] + ", ");
+					posicionesCasilla.append(pos + ", ");
 				} else if (pNombreCasilla == "Oca" && data[1].equals("Oca")) {
-					posicionesCasilla.append(data[0] + ", ");
+					posicionesCasilla.append(pos + ", ");
 				} else if (pNombreCasilla == "Puente" && data[1].equals("Puente")) {
-					posicionesCasilla.append(data[0] + ", ");
+					posicionesCasilla.append(pos + ", ");
 				} else if (pNombreCasilla == "Dado" && data[1].equals("Dado")) {
-					posicionesCasilla.append(data[0] + ", ");
+					posicionesCasilla.append(pos + ", ");
 				} else if (pNombreCasilla == "Carcel" && data[1].equals("Carcel")) {
-					posicionesCasilla.append(data[0] + ", ");
+					posicionesCasilla.append(pos + ", ");
 				} else if (pNombreCasilla == "Pension" && data[1].equals("Pension")) {
-					posicionesCasilla.append(data[0] + ", ");
+					posicionesCasilla.append(pos + ", ");
 				} else if (pNombreCasilla == "Pozo" && data[1].equals("Pozo")) {
-					posicionesCasilla.append(data[0] + ", ");
+					posicionesCasilla.append(pos + ", ");
 				}
+				pos++;
 			}
 			fileReader.close();
 			strCurrentLine = (posicionesCasilla.deleteCharAt(posicionesCasilla.length()-2)).toString();

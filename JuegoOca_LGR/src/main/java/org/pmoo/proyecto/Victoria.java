@@ -1,5 +1,5 @@
 package org.pmoo.proyecto;
 
-public class CasillaVictoria {
+public class Victoria {
 
 }

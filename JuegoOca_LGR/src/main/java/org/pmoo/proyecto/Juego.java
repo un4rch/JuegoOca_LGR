@@ -32,23 +32,6 @@ public class Juego {
 		return Juego.miJuego;
 	}
 	/**
-	 * Limpia la consola de comandos o shell (clear screen).
-	 */
-	public void limpiarConsola() {
-		try {
-	        if (System.getProperty("os.name").contains("Windows"))
-	            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-	        else
-	            Runtime.getRuntime().exec("clear");
-	    } catch (Exception e) {}
-	}
-	/**
-	 * Termina la partida saliendo del juego por completo.
-	 */
-	public void terminarPartida() {
-		System.exit(0);
-	}
-	/**
 	 * @return Devuelve el numero seleccionado de la tematica del tablero.
 	 */
 	public static int getOpcionTablero() {
@@ -61,11 +44,12 @@ public class Juego {
 		Teclado teclado = Teclado.getTeclado();
 		
 		System.out.println(ansi().fg(WHITE).a("Numero de Jugadores posibles:\n").reset());
-		System.out.println(ansi().fg(WHITE).a("\t(1) Dos Jugadores.").reset());
-		System.out.println(ansi().fg(WHITE).a("\t(2) Tres Jugadores.").reset());
-		System.out.println(ansi().fg(WHITE).a("\t(3) Cuatro Jugadores.\n").reset());
+		System.out.println(ansi().fg(WHITE).a("\t(1) Un Jugador.").reset());
+		System.out.println(ansi().fg(WHITE).a("\t(2) Dos Jugadores.").reset());
+		System.out.println(ansi().fg(WHITE).a("\t(3) Tres Jugadores.").reset());
+		System.out.println(ansi().fg(WHITE).a("\t(4) Cuatro Jugadores.\n").reset());
 		System.out.print(ansi().fg(WHITE).a("¿Cuantos jugadores van ha jugar?").reset());
-		int numJugadores = teclado.pedirOpcion(3)+1;
+		int numJugadores = teclado.pedirOpcion(4);
 		
 		for (int i=1; i<=numJugadores; i++) {
 			ListaFichas.añadirFicha(new Ficha("Jugador" + i));
@@ -88,21 +72,23 @@ public class Juego {
 			while ((strCurrentLine = fileReader.readLine()) != null) {    
                 String data[] = strCurrentLine.split("_");
                 if (data[1] == "Muerte") {
-                	ListaCasillas.añadirCasilla(new CasillaMuerte());
+                	ListaCasillas.añadirCasilla(new Muerte());
                 } else if (data[1] == "Oca") {
-                	ListaCasillas.añadirCasilla(new CasillaDesplazarYTirar(data[2]));
+                	ListaCasillas.añadirCasilla(new DesplazarYTirar("", data[2]));
                 } else if (data[1] == "Puente") {
-                	ListaCasillas.añadirCasilla(new CasillaDesplazarYTirar(data[2]));
+                	ListaCasillas.añadirCasilla(new DesplazarYTirar("", data[2]));
                 } else if (data[1] == "Dado") {
-                	ListaCasillas.añadirCasilla(new CasillaDesplazarYTirar(data[2]));
+                	ListaCasillas.añadirCasilla(new DesplazarYTirar("", data[2]));
                 } else if (data[1] == "Carcel") {
-                	ListaCasillas.añadirCasilla(new CasillaEspera(data[2]));
+                	ListaCasillas.añadirCasilla(new Espera("", data[2]));
                 } else if (data[1] == "Pension") {
-                	ListaCasillas.añadirCasilla(new CasillaEspera(data[2]));
+                	ListaCasillas.añadirCasilla(new Espera("", data[2]));
                 } else if (data[1] == "Pozo") {
-                	ListaCasillas.añadirCasilla(new CasillaEspera(data[2]));
+                	ListaCasillas.añadirCasilla(new Espera("", data[2]));
+                } else if (data[1] == "Victoria") {
+                	ListaCasillas.añadirCasilla(new Victoria());
                 } else {
-                	ListaCasillas.añadirCasilla(new CasillaNormal());
+                	ListaCasillas.añadirCasilla(new Normal());
                 }
             }
 			fileReader.close();
