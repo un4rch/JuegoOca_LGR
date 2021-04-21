@@ -1,6 +1,6 @@
 package org.pmoo.proyecto;
 
 public class Ficha {
-	// sin acabar
+	// sin acabar una vez mas
 
 }
