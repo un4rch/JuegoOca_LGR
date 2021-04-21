@@ -3,7 +3,7 @@ package org.pmoo.proyecto;
 import java.util.ArrayList;
 
 public class ListaCasillas {
-	
+
 	//Atributos
 	private ArrayList<Casilla> lista;
 	private static ListaCasillas miListaCasillas;

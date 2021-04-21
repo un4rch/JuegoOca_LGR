@@ -9,7 +9,7 @@ public abstract class Casilla {
 	public Casilla (String pDescripcion) {
 		this.descripcion = pDescripcion;
 	}
-	
+
 	//metodos
 	public void imprimirInfo() {
 		System.out.println(this.descripcion);
