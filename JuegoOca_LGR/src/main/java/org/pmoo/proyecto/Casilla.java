@@ -1,7 +1,7 @@
 package org.pmoo.proyecto;
 
 public abstract class Casilla {
-
+	
 	//atributos
 	private String descripcion;
 	
