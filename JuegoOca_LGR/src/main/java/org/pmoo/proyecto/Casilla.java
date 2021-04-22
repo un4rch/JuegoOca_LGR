@@ -11,7 +11,7 @@ public abstract class Casilla {
 	}
 
 	//metodos
-	public void imprimirInfo() {
+	private void imprimirInfo() {
 		System.out.println(this.descripcion);
 	}
 	
