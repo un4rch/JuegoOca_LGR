@@ -1,6 +1,6 @@
 package org.pmoo.proyecto;
 
-public class Espera extends Casilla {
+public class Espera extends Casilla{
 	
 
 	//atributos

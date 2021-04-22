@@ -1,6 +1,6 @@
 package org.pmoo.proyecto;
 
-public class Muerte extends Casilla {
+public class Muerte extends Casilla{
 	
 
 	//constructora

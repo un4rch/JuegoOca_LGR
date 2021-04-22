@@ -1,6 +1,6 @@
 package org.pmoo.proyecto;
 
-public class Normal extends Casilla {
+public class Normal extends Casilla{
 	
 
 	//constructora

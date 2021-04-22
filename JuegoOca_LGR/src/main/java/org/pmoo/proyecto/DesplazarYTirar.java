@@ -1,6 +1,6 @@
 package org.pmoo.proyecto;
 
-public class DesplazarYTirar extends Casilla {
+public class DesplazarYTirar extends Casilla{
 		
 
 		//atributos

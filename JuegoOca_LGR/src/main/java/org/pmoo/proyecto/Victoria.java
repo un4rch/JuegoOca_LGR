@@ -1,6 +1,6 @@
 package org.pmoo.proyecto;
 
-public class Victoria extends Casilla {
+public class Victoria extends Casilla{
 	
 	public Victoria (String pDescripcion)
 	{		
