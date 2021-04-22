@@ -21,7 +21,7 @@ public class ListaCasillas {
 		return miListaCasillas;
 	}
 	
-	public void añadirCasilla(Casilla pCasilla) {
+	public void anadirCasilla(Casilla pCasilla) {
 		this.lista.add(pCasilla);
 	}
 	
