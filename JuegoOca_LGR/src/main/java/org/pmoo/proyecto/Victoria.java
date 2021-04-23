@@ -1,18 +1,18 @@
 package org.pmoo.proyecto;
 
 public class Victoria extends Casilla{
-	
-	public Victoria (String pDescripcion)
-	{		
-		super(pDescripcion);
+    
+    public Victoria (String pDescripcion)
+    {        
+        super(pDescripcion);
 
-	}	
-	
-	public void cumplirMiFuncion(Ficha pFicha) {
-		
-		super.cumplirMiFuncion();
-		pFicha.sobreescribirHeGanado();    
-		
-	}
+    }    
+    
+    public void cumplirMiFuncion(Ficha pFicha) {
+        
+        super.cumplirMiFuncion();
+        pFicha.sobreescribirHeGanado();    
+        
+    }
 
 }

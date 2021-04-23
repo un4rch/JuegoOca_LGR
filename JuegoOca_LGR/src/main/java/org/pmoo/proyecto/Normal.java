@@ -1,15 +1,15 @@
 package org.pmoo.proyecto;
 
 public class Normal extends Casilla{
-	
+    
 
-	//constructora
+    //constructora
 
-	public Normal (String pDescripcion)
-	{		
-		super(pDescripcion);
+    public Normal (String pDescripcion)
+    {        
+        super(pDescripcion);
 
-	}	
-	
+    }    
+    
 
 }

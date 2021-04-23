@@ -2,10 +2,58 @@ package org.pmoo.proyecto;
 
 public class ListaFichas {
     
+    private ArrayList<Ficha> lista;
+    private static ListaFichas miListaFichas=null;
+    
+    private ListaFichas()
+    {
+        lista = new ArrayList<Ficha>();
+    }
+    
     //otros metodos
     /**
      * Limpia la consola de comandos o shell (clear screen).
      */
+    
+    public static ListaFichas getListaFichas()
+    {
+        if (ListaFichas.miListaFichas==null)
+        {
+            ListaFichas.miListaFichas = new ListaFichas();
+        }
+        return (ListaFichas.miListaFichas);
+    }
+    
+    private Iterator<Ficha> getIterador();
+    {
+        return(this.lista.iterator());
+    }
+    
+    public void anadirFicha(Ficha pFicha)
+    {
+        this.lista.add(pFicha);
+    }
+    
+    public int obtenerNumFichas()
+    {
+        return(this.lista.size());
+    }
+    
+    public void jugar()
+    {
+        boolean ganador = false;
+        Ficha fichAct = null;
+        while (!ganador)
+        {
+            Iterator<Ficha> itr = this.getIterador();
+            while (!ganador && itr.hasNext())
+            {
+                fichAct = itr.next();
+                fichAct.jugar();
+            }
+        }
+    }
+    
     public void limpiarConsola() {
         try {
             if (System.getProperty("os.name").contains("Windows"))
