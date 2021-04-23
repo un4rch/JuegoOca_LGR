@@ -18,7 +18,7 @@ public class DesplazarYTirar extends Casilla{
         
         public void cumplirMiFuncion(Ficha pFicha) {
             
-            super.cumplirMiFuncion();
+            super.cumplirMiFuncion(pFicha);
             pFicha.sobreescribirPosicion(this.nuevaPosicion);
             pFicha.jugar();                                       // que implica : tirarDado ()  : int
                                                                   //               getPosicion () : int

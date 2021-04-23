@@ -119,13 +119,13 @@ public class Tablero {
         Ansi ansiFichaEnCasilla;
         //ListaFichas.getListaFichas.get(0).getPosicion() //0-V,1-R,2-A,3-M indican los colores de los jugadores(Verde, Rojo, Azul y Magenta)
         try {
-            if (pInicial == 'V' && ListaFichas.getListaFichas.get(0).getPosicion() == pPosCasilla) {
+            if (pInicial == 'V' && ListaFichas.getListaFichas().obtenerFicha(0).getPosicion() == pPosCasilla) {
                 ansiFichaEnCasilla = ansi().fg(GREEN).a("●").reset();
-            } else if (pInicial == 'R' && ListaFichas.getListaFichas.get(1).getPosicion() == pPosCasilla) {
+            } else if (pInicial == 'R' && ListaFichas.getListaFichas().obtenerFicha(1).getPosicion() == pPosCasilla) {
                 ansiFichaEnCasilla = ansi().fg(RED).a("●").reset();
-            } else if (pInicial == 'A' && ListaFichas.getListaFichas.get(2).getPosicion() == pPosCasilla) {
+            } else if (pInicial == 'A' && ListaFichas.getListaFichas().obtenerFicha(2).getPosicion() == pPosCasilla) {
                 ansiFichaEnCasilla = ansi().fg(BLUE).a("●").reset();
-            } else if (pInicial == 'M' && ListaFichas.getListaFichas.get(3).getPosicion() == pPosCasilla) {
+            } else if (pInicial == 'M' && ListaFichas.getListaFichas().obtenerFicha(3).getPosicion() == pPosCasilla) {
                 ansiFichaEnCasilla = ansi().fg(MAGENTA).a("●").reset();
             } else {
                 ansiFichaEnCasilla = ansi().fg(WHITE).a(" ").reset();

@@ -1,9 +1,9 @@
 package org.pmoo.proyecto;
 
+import java.lang.Integer;
 import static org.fusesource.jansi.Ansi.ansi;
 import static org.fusesource.jansi.Ansi.Color.GREEN;
 import static org.fusesource.jansi.Ansi.Color.WHITE;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 
@@ -42,6 +42,7 @@ public class Juego {
      */
     public void configurarTablero() {
         Teclado teclado = Teclado.getTeclado();
+        ListaCasillas listaCasillas = ListaCasillas.getListaCasillas();
         
         System.out.println(ansi().fg(WHITE).a("Numero de Jugadores posibles:\n").reset());
         System.out.println(ansi().fg(WHITE).a("\t(1) Un Jugador.").reset());
@@ -52,7 +53,7 @@ public class Juego {
         int numJugadores = teclado.pedirOpcion(4);
         
         for (int i=1; i<=numJugadores; i++) {
-            ListaFichas.añadirFicha(new Ficha("Jugador" + i));
+            ListaFichas.getListaFichas().anadirFicha(new Ficha("Jugador" + i));
         }
         
         System.out.println(ansi().fg(WHITE).a("Modos de juego:\n").reset());
@@ -72,23 +73,23 @@ public class Juego {
             while ((strCurrentLine = fileReader.readLine()) != null) {    
                 String data[] = strCurrentLine.split("_");
                 if (data[0] == "Muerte") {
-                    ListaCasillas.añadirCasilla(new Muerte());
+                    listaCasillas.anadirCasilla(new Muerte("Soy Casilla Muerte"));
                 } else if (data[0] == "Oca") {
-                    ListaCasillas.añadirCasilla(new DesplazarYTirar("", data[1]));
+                    listaCasillas.anadirCasilla(new DesplazarYTirar("", Integer.parseInt(data[1])));
                 } else if (data[0] == "Puente") {
-                    ListaCasillas.añadirCasilla(new DesplazarYTirar("", data[1]));
+                    listaCasillas.anadirCasilla(new DesplazarYTirar("",Integer.parseInt(data[1])));
                 } else if (data[0] == "Dado") {
-                    ListaCasillas.añadirCasilla(new DesplazarYTirar("", data[1]));
+                    listaCasillas.anadirCasilla(new DesplazarYTirar("",Integer.parseInt(data[1])));
                 } else if (data[0] == "Carcel") {
-                    ListaCasillas.añadirCasilla(new Espera("", data[1]));
+                    listaCasillas.anadirCasilla(new Espera("",Integer.parseInt(data[1])));
                 } else if (data[0] == "Pension") {
-                    ListaCasillas.añadirCasilla(new Espera("", data[1]));
+                    listaCasillas.anadirCasilla(new Espera("",Integer.parseInt(data[1])));
                 } else if (data[0] == "Pozo") {
-                    ListaCasillas.añadirCasilla(new Espera("", data[1]));
+                    listaCasillas.anadirCasilla(new Espera("",Integer.parseInt(data[1])));
                 } else if (data[0] == "Victoria") {
-                    ListaCasillas.añadirCasilla(new Victoria());
+                    listaCasillas.anadirCasilla(new Victoria("Soy Casilla Victoria"));
                 } else {
-                    ListaCasillas.añadirCasilla(new Normal());
+                    listaCasillas.anadirCasilla(new Normal("Soy Casilla Normal"));
                 }
             }
             fileReader.close();
@@ -102,7 +103,7 @@ public class Juego {
     
     public void jugarPartida() {
         this.configurarTablero();
-        ListaFichas.jugar();
+        ListaFichas.getListaFichas().jugar();
     }
     /**
      * Metodo principal del juego, aqui es donde comienza todo la partida.

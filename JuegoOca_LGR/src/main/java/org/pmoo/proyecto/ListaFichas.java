@@ -1,4 +1,6 @@
 package org.pmoo.proyecto;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ListaFichas {
     
@@ -24,7 +26,7 @@ public class ListaFichas {
         return (ListaFichas.miListaFichas);
     }
     
-    private Iterator<Ficha> getIterador();
+    private Iterator<Ficha> getIterador()
     {
         return(this.lista.iterator());
     }
@@ -52,6 +54,11 @@ public class ListaFichas {
                 fichAct.jugar();
             }
         }
+    }
+    
+    
+    public Ficha obtenerFicha(int pPosFicha) {
+    	return this.lista.get(pPosFicha);
     }
     
     public void limpiarConsola() {

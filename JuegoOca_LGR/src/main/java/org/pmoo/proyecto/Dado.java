@@ -17,6 +17,6 @@ public class Dado {
     }
 
     public int tirarDado() {
-        return (Math.random()*5)+1;
+        return (int) Math.round((Math.random()*5)+1);
     }
 }
