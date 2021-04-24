@@ -1,0 +1,10 @@
+Normal
+Muerte
+//DesplazarYTirar
+Oca_y
+Puente_y	//"y" representa la nueva pos a la que tiene que se tine que enviar 
+Dado_y
+//Espera
+Carcel_y
+Pension_y	//"y" representa las posiciones que la casilla le asigna a la ficha
+Pozo_y
