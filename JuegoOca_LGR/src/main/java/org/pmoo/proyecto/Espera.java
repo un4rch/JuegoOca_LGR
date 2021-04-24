@@ -18,7 +18,7 @@ public class Espera extends Casilla{
     
     public void cumplirMiFuncion(Ficha pFicha) {
         
-        super.cumplirMiFuncion(pFicha);
+        super.imprimirInfo();
         pFicha.modificarTurnosEspera(this.turnosEspera);
     }
 

@@ -1,6 +1,12 @@
 package org.pmoo.proyecto;
+
 import java.util.ArrayList;
 import java.util.Iterator;
+
+import static org.fusesource.jansi.Ansi.ansi;
+import static org.fusesource.jansi.Ansi.Color.*;
+
+import java.lang.Thread;
 
 public class ListaFichas {
     
@@ -45,15 +51,36 @@ public class ListaFichas {
     {
         boolean ganador = false;
         Ficha fichAct = null;
-        while (!ganador)
-        {
-            Iterator<Ficha> itr = this.getIterador();
-            while (!ganador && itr.hasNext())
-            {
-                fichAct = itr.next();
-                fichAct.jugar();
-            }
+        this.limpiarConsola();
+        try {
+        	 while (!ganador)
+             {
+                 Iterator<Ficha> itr = this.getIterador();
+                 while (!ganador && itr.hasNext())
+                 {
+                     Tablero.getTablero().imprimirTablero();
+                     fichAct = itr.next();
+                     System.out.println(ansi().fg(YELLOW).a("[*] Opciones de Juego:\n"));
+                     System.out.println("\t(1) Tirar Dado.");
+                     System.out.println("\t(2) Terminar Partida.\n");
+                     System.out.println(ansi().fg(CYAN).a(fichAct.getNombre() + ", ¿Que deseas hacer? ").reset());
+                     if (Teclado.getTeclado().pedirOpcion(2) == 2) {
+                     	this.terminarPartida();
+                     }
+                     System.out.println(ansi().fg(YELLOW).a(""));
+                     fichAct.jugar();
+                     ganador = fichAct.getHeGanado();
+                     System.out.println(ansi().fg(MAGENTA).a("").reset());
+                     Thread.sleep(3000);
+                     this.limpiarConsola();
+                 }
+             }
+        	 System.out.println(ansi().fg(GREEN).a("\n\n\n\n\t\t\t\t\t\t\t\tFelicidades " + ansi().fg(CYAN).a(fichAct.getNombre()) + ansi().fg(GREEN).a(" has ganado la partida!")));
+        	 Thread.sleep(5000);
+        } catch (Exception e) {
+        	
         }
+        
     }
     
     
@@ -72,8 +99,13 @@ public class ListaFichas {
     /**
      * Termina la partida saliendo del juego por completo.
      */
-    public static void terminarPartida() {
-        System.out.println("Hasta la proxima...");
+    public void terminarPartida() {
+        System.out.println("\nHasta la proxima...");
+        try {
+        	Thread.sleep(2000);
+        } catch(Exception e) {
+        	
+        }
         System.exit(0);
     }
 }

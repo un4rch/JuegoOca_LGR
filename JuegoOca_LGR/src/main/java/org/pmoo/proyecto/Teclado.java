@@ -1,5 +1,6 @@
 package org.pmoo.proyecto;
 
+import java.io.PrintStream;
 import java.util.Scanner;
 import static org.fusesource.jansi.Ansi.ansi;
 import static org.fusesource.jansi.Ansi.Color.*;
@@ -7,7 +8,6 @@ import static org.fusesource.jansi.Ansi.Color.*;
 public class Teclado {
     //Atributos
     private static Teclado miTeclado = null;
-    private Scanner input = new Scanner(System.in);
 
     //Constructora
     /**
@@ -33,22 +33,20 @@ public class Teclado {
      * @return Devuelve un entero que representa el numero de opcion que ha elegido el usuario.
      */
     public int pedirOpcion(int pNumOpciones) {
+    	Scanner input = new Scanner(System.in);
         int opcion = 0;
-        while (opcion < 1 || opcion > pNumOpciones) {
-            try{
-                opcion = input.nextInt();
-                if (opcion < 1 || opcion > pNumOpciones) {
-                    System.out.print(ansi().fg(RED).a("[Ø] Error: Opción no valida, intentalo de nuevo: ").reset());
-                }
-            } catch (Exception e) {
-                System.out.print(ansi().fg(RED).a("[Ø] Error: Opción no valida, intentalo de nuevo: ").reset());
-                opcion = input.nextInt();
+        try{
+        	PrintStream outStream = new PrintStream(System.out, true, "UTF-8");
+            if (input.hasNextInt()) {
+            	opcion = input.nextInt();
             }
-            //if (opcion >= 1 && opcion <= pNumOpciones) {
-            //	input.close();
-            //}
-        }
-        this.input.close();
+            if (opcion < 1 || opcion > pNumOpciones) {
+            	outStream.print(ansi().fg(RED).a("[Ø] Error: Opcion no valida, intentalo de nuevo: ").reset());
+            	opcion = Teclado.getTeclado().pedirOpcion(pNumOpciones);
+            }
+    	} catch (Exception e) {
+    		
+    	}
         return opcion;
     }
 }

@@ -10,7 +10,7 @@ public class Victoria extends Casilla{
     
     public void cumplirMiFuncion(Ficha pFicha) {
         
-        super.cumplirMiFuncion(pFicha);
+        super.imprimirInfo();
         pFicha.sobreescribirHeGanado();    
         
     }

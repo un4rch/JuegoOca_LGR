@@ -11,15 +11,10 @@ public abstract class Casilla {
     }
 
     //metodos
-    private void imprimirInfo() {
-        System.out.println(this.descripcion);
+    public void imprimirInfo() {
+        System.out.println(this.descripcion + "\n");
     }
     
-    public void cumplirMiFuncion(Ficha pFicha) {
-        this.imprimirInfo();
-    }
+    public abstract void cumplirMiFuncion(Ficha pFicha);
     
-    protected String getDescripcion() {
-        return this.descripcion;
-    }
 }

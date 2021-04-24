@@ -38,7 +38,8 @@ public class Tablero {
         try {
             PrintStream outStream = new PrintStream(System.out, true, "UTF-8");
             
-            String posicionesNormal = this.impPosicionesCasillas("Normal", Juego.getOpcionTablero());
+            //String posicionesNormal = this.impPosicionesCasillas("Normal", Juego.getOpcionTablero());
+            String posicionesNormal = "El resto de las casillas.";
             String posicionesMuerte = this.impPosicionesCasillas("Muerte", Juego.getOpcionTablero());
             String posicionesOca = this.impPosicionesCasillas("Oca", Juego.getOpcionTablero());
             String posicionesPuente = this.impPosicionesCasillas("Puente", Juego.getOpcionTablero());
@@ -48,10 +49,36 @@ public class Tablero {
             String posicionesPozo = this.impPosicionesCasillas("Pozo", Juego.getOpcionTablero());
             String posicionesVictoria = this.impPosicionesCasillas("Victoria", Juego.getOpcionTablero());
             
+            int turnosEsperaFicha1;
+            int turnosEsperaFicha2;
+            int turnosEsperaFicha3;
+            int turnosEsperaFicha4;
+            try {
+            	turnosEsperaFicha1 = ListaFichas.getListaFichas().obtenerFicha(0).getTurnosEspera();
+            } catch (Exception e) {
+            	turnosEsperaFicha1 = 0;
+            }
+            try {
+            	turnosEsperaFicha2 = ListaFichas.getListaFichas().obtenerFicha(1).getTurnosEspera();
+            } catch (Exception e) {
+            	turnosEsperaFicha2 = 0;
+            }
+            try {
+            	turnosEsperaFicha3 = ListaFichas.getListaFichas().obtenerFicha(2).getTurnosEspera();
+            } catch (Exception e) {
+            	turnosEsperaFicha3 = 0;
+            }
+            try {
+            	turnosEsperaFicha4 = ListaFichas.getListaFichas().obtenerFicha(3).getTurnosEspera();
+            } catch (Exception e) {
+            	turnosEsperaFicha4 = 0;
+            }
+
+            
             outStream.println("\t\t\t\t\tEstado actual del tablero:\n\n");
         
-            outStream.println("                      +------+------+------+------+------+------+------+------+------+------+");
-            outStream.println("                      |  34  |  33  |  32  |  31  |  30  |  29  |  28  |  27  |  26  |  25  |");
+            outStream.println("                      +------+------+------+------+------+------+------+------+------+------+" + "\t\tTurnos de espera:");
+            outStream.println("                      |  34  |  33  |  32  |  31  |  30  |  29  |  28  |  27  |  26  |  25  |" + "\t\t JUgador1: " + turnosEsperaFicha1  + "\tJugador2: " + turnosEsperaFicha2  + "\tJugador3: " + turnosEsperaFicha3  + "\tJugador4: " + turnosEsperaFicha4);
             outStream.println("                      | " + this.impFichaEnTablero('V', 34) + this.impFichaEnTablero('R', 34) + this.impFichaEnTablero('A', 34) + this.impFichaEnTablero('M', 34) + " | " + this.impFichaEnTablero('V', 33) + this.impFichaEnTablero('R', 33) + this.impFichaEnTablero('A', 33) + this.impFichaEnTablero('M', 33) + " | " + this.impFichaEnTablero('V', 32) + this.impFichaEnTablero('R', 32) + this.impFichaEnTablero('A', 32) + this.impFichaEnTablero('M', 32) + " | " + this.impFichaEnTablero('V', 31) + this.impFichaEnTablero('R', 31) + this.impFichaEnTablero('A', 31) + this.impFichaEnTablero('M', 31) + " | " + this.impFichaEnTablero('V', 30) + this.impFichaEnTablero('R', 30) + this.impFichaEnTablero('A', 30) + this.impFichaEnTablero('M', 30) + " | " + this.impFichaEnTablero('V', 29) + this.impFichaEnTablero('R', 29) + this.impFichaEnTablero('A', 29) + this.impFichaEnTablero('M', 29) + " | " + this.impFichaEnTablero('V', 28) + this.impFichaEnTablero('R', 28) + this.impFichaEnTablero('A', 28) + this.impFichaEnTablero('M', 28) + " | " + this.impFichaEnTablero('V', 27) + this.impFichaEnTablero('R', 27) + this.impFichaEnTablero('A', 27) + this.impFichaEnTablero('M', 27) + " | " + this.impFichaEnTablero('V', 26) + this.impFichaEnTablero('R', 26) + this.impFichaEnTablero('A', 26) + this.impFichaEnTablero('M', 26) + " | " + this.impFichaEnTablero('V', 25) + this.impFichaEnTablero('R', 25) + this.impFichaEnTablero('A', 25) + this.impFichaEnTablero('M', 25) + " |");
             outStream.println("                      +------+------+------+------+------+------+------+------+------+------+");
             outStream.println("                      |  35  |                                                       |  24  |" + "\t\tCasillas Normal:");

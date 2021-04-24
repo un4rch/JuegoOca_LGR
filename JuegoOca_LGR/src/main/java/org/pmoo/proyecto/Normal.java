@@ -11,5 +11,8 @@ public class Normal extends Casilla{
 
     }    
     
+    public void cumplirMiFuncion(Ficha pFicha) {        
+        super.imprimirInfo();
+    }
 
 }

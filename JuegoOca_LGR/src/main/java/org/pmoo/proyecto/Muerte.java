@@ -13,7 +13,7 @@ public class Muerte extends Casilla{
     
     public void cumplirMiFuncion(Ficha pFicha) {
         
-        super.cumplirMiFuncion(pFicha);
+        super.imprimirInfo();
         pFicha.sobreescribirPosicion(1);                    // nos lleva directamente a la casilla de inicio 
     }
 }
