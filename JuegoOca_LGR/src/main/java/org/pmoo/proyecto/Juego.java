@@ -6,6 +6,7 @@ import static org.fusesource.jansi.Ansi.ansi;
 import static org.fusesource.jansi.Ansi.Color.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.PrintStream;
 
 /**
  * Esta es la clase principal del Juego, donde comenzara toda la ejecucion del juego
@@ -40,30 +41,30 @@ public class Juego {
     /**
      * Configura el tablero en funcion de un numero de jugadores y una tematica de tablero, los cuales el usuario escogera por consola.
      */
-    public void configurarTablero() {
-        PrintStream outStream = new PrintStream(System.out, true, "UTF-8");
-        Teclado teclado = Teclado.getTeclado();
-        ListaCasillas listaCasillas = ListaCasillas.getListaCasillas();
-        
-        outStream.println(ansi().fg(WHITE).a("Numero de Jugadores posibles:\n").reset());
-        outStream.println(ansi().fg(WHITE).a("\t(1) Un Jugador.").reset());
-        outStream.println(ansi().fg(WHITE).a("\t(2) Dos Jugadores.").reset());
-        outStream.println(ansi().fg(WHITE).a("\t(3) Tres Jugadores.").reset());
-        outStream.println(ansi().fg(WHITE).a("\t(4) Cuatro Jugadores.\n").reset());
-        outStream.print(ansi().fg(CYAN).a("¿Cuantos jugadores van ha jugar?").reset());
-        int numJugadores = teclado.pedirOpcion(4);
-        
-        for (int i=1; i<=numJugadores; i++) {
-            ListaFichas.getListaFichas().anadirFicha(new Ficha("Jugador" + i));
-        }
-        
-        outStream.println(ansi().fg(WHITE).a("\nModos de juego:\n").reset());
-        outStream.println(ansi().fg(WHITE).a("\t(1) Tablero Clasico.").reset());
-        outStream.println(ansi().fg(WHITE).a("\t(2) Tablero Personalizado.\n").reset());
-        outStream.print(ansi().fg(CYAN).a("¿Que modo de juego deseas jugar?").reset());
-        Juego.opcionTablero = teclado.pedirOpcion(2);
-        
+    public void configurarTablero() { 
         try {
+        	PrintStream outStream = new PrintStream(System.out, true, "UTF-8");
+            Teclado teclado = Teclado.getTeclado();
+            ListaCasillas listaCasillas = ListaCasillas.getListaCasillas();
+            
+            outStream.println(ansi().fg(WHITE).a("Numero de Jugadores posibles:\n").reset());
+            outStream.println(ansi().fg(WHITE).a("\t(1) Un Jugador.").reset());
+            outStream.println(ansi().fg(WHITE).a("\t(2) Dos Jugadores.").reset());
+            outStream.println(ansi().fg(WHITE).a("\t(3) Tres Jugadores.").reset());
+            outStream.println(ansi().fg(WHITE).a("\t(4) Cuatro Jugadores.\n").reset());
+            outStream.print(ansi().fg(CYAN).a("¿Cuantos jugadores van ha jugar?").reset());
+            int numJugadores = teclado.pedirOpcion(4);
+            
+            for (int i=1; i<=numJugadores; i++) {
+                ListaFichas.getListaFichas().anadirFicha(new Ficha("Jugador" + i));
+            }
+            
+            outStream.println(ansi().fg(WHITE).a("\nModos de juego:\n").reset());
+            outStream.println(ansi().fg(WHITE).a("\t(1) Tablero Clasico.").reset());
+            outStream.println(ansi().fg(WHITE).a("\t(2) Tablero Personalizado.\n").reset());
+            outStream.print(ansi().fg(CYAN).a("¿Que modo de juego deseas jugar?").reset());
+            Juego.opcionTablero = teclado.pedirOpcion(2);
+            
             BufferedReader fileReader = null;
             if (Juego.opcionTablero == 1) {
                 fileReader = new BufferedReader(new FileReader("./tableros/TableroClasico.txt"));
@@ -103,19 +104,22 @@ public class Juego {
     }
     
     public void jugarPartida() {
-        PrintStream outStream = new PrintStream(System.out, true, "UTF-8");
-        outStream.println(ansi().fg(BLUE).a(""));
-        outStream.println("\t\t\t\t\t\t __                   _____                      ");
-        outStream.println("\t\t\t\t\t\t/\\ \\                 /\\  __`\\                    ");
-        outStream.println("\t\t\t\t\t\t\\ \\ \\         __     \\ \\ \\/\\ \\    ___     __     ");
-        outStream.println("\t\t\t\t\t\t \\ \\ \\  __  /'__`\\    \\ \\ \\ \\ \\  /'___\\ /'__`\\   ");
-        outStream.println("\t\t\t\t\t\t  \\ \\ \\L\\ \\/\\ \\L\\.\\_   \\ \\ \\_\\ \\/\\ \\__//\\ \\L\\.\\_ ");
-        outStream.println("\t\t\t\t\t\t   \\ \\____/\\ \\__/.\\_\\   \\ \\_____\\ \\____\\ \\__/.\\_\\");
-        outStream.println("\t\t\t\t\t\t    \\/___/  \\/__/\\/_/    \\/_____/\\/____/\\/__/\\/_/");
-        outStream.println(ansi().fg(BLUE).a("\n\n").reset());
-        
-        outStream.println("Bienvenidos al juego de La Oca, antes de comenzar a jugar haremos unas pequeñas configuraciones...\n");
-        
+        try {
+        	PrintStream outStream = new PrintStream(System.out, true, "UTF-8");
+            outStream.println(ansi().fg(BLUE).a(""));
+            outStream.println("\t\t\t\t\t\t __                   _____                      ");
+            outStream.println("\t\t\t\t\t\t/\\ \\                 /\\  __`\\                    ");
+            outStream.println("\t\t\t\t\t\t\\ \\ \\         __     \\ \\ \\/\\ \\    ___     __     ");
+            outStream.println("\t\t\t\t\t\t \\ \\ \\  __  /'__`\\    \\ \\ \\ \\ \\  /'___\\ /'__`\\   ");
+            outStream.println("\t\t\t\t\t\t  \\ \\ \\L\\ \\/\\ \\L\\.\\_   \\ \\ \\_\\ \\/\\ \\__//\\ \\L\\.\\_ ");
+            outStream.println("\t\t\t\t\t\t   \\ \\____/\\ \\__/.\\_\\   \\ \\_____\\ \\____\\ \\__/.\\_\\");
+            outStream.println("\t\t\t\t\t\t    \\/___/  \\/__/\\/_/    \\/_____/\\/____/\\/__/\\/_/");
+            outStream.println(ansi().fg(BLUE).a("\n\n").reset());
+            
+            outStream.println("Bienvenidos al juego de La Oca, antes de comenzar a jugar haremos unas pequeñas configuraciones...\n");
+        } catch(Exception e) {
+        	
+        }
         this.configurarTablero();
         ListaFichas.getListaFichas().jugar();
     }
