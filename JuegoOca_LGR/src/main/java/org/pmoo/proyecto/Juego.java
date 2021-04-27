@@ -42,29 +42,27 @@ public class Juego {
      * Configura el tablero en funcion de un numero de jugadores y una tematica de tablero, los cuales el usuario escogera por consola.
      */
     public void configurarTablero() { 
-        try {
-        	PrintStream outStream = new PrintStream(System.out, true, "UTF-8");
-            Teclado teclado = Teclado.getTeclado();
-            ListaCasillas listaCasillas = ListaCasillas.getListaCasillas();
-            
-            outStream.println(ansi().fg(WHITE).a("Numero de Jugadores posibles:\n").reset());
-            outStream.println(ansi().fg(WHITE).a("\t(1) Un Jugador.").reset());
-            outStream.println(ansi().fg(WHITE).a("\t(2) Dos Jugadores.").reset());
-            outStream.println(ansi().fg(WHITE).a("\t(3) Tres Jugadores.").reset());
-            outStream.println(ansi().fg(WHITE).a("\t(4) Cuatro Jugadores.\n").reset());
-            outStream.print(ansi().fg(CYAN).a("¿Cuantos jugadores van ha jugar?").reset());
-            int numJugadores = teclado.pedirOpcion(4);
-            
-            for (int i=1; i<=numJugadores; i++) {
-                ListaFichas.getListaFichas().anadirFicha(new Ficha("Jugador" + i));
-            }
-            
-            outStream.println(ansi().fg(WHITE).a("\nModos de juego:\n").reset());
-            outStream.println(ansi().fg(WHITE).a("\t(1) Tablero Clasico.").reset());
-            outStream.println(ansi().fg(WHITE).a("\t(2) Tablero Personalizado.\n").reset());
-            outStream.print(ansi().fg(CYAN).a("¿Que modo de juego deseas jugar?").reset());
-            Juego.opcionTablero = teclado.pedirOpcion(2);
-            
+    	Teclado teclado = Teclado.getTeclado();
+        ListaCasillas listaCasillas = ListaCasillas.getListaCasillas();
+        
+        System.out.println(ansi().fg(WHITE).a("Numero de Jugadores posibles:\n").reset());
+        System.out.println(ansi().fg(WHITE).a("\t(1) Un Jugador.").reset());
+        System.out.println(ansi().fg(WHITE).a("\t(2) Dos Jugadores.").reset());
+        System.out.println(ansi().fg(WHITE).a("\t(3) Tres Jugadores.").reset());
+        System.out.println(ansi().fg(WHITE).a("\t(4) Cuatro Jugadores.\n").reset());
+        System.out.print(ansi().fg(CYAN).a("¿Cuantos jugadores van ha jugar?").reset());
+        int numJugadores = teclado.pedirOpcion(4);
+        
+        for (int i=1; i<=numJugadores; i++) {
+            ListaFichas.getListaFichas().anadirFicha(new Ficha("Jugador" + i));
+        }
+        
+        System.out.println(ansi().fg(WHITE).a("\nModos de juego:\n").reset());
+        System.out.println(ansi().fg(WHITE).a("\t(1) Tablero Clasico.").reset());
+        System.out.println(ansi().fg(WHITE).a("\t(2) Tablero Personalizado.\n").reset());
+        System.out.print(ansi().fg(CYAN).a("¿Que modo de juego deseas jugar?").reset());
+        Juego.opcionTablero = teclado.pedirOpcion(2);
+    	try {
             BufferedReader fileReader = null;
             if (Juego.opcionTablero == 1) {
                 fileReader = new BufferedReader(new FileReader("./tableros/TableroClasico.txt"));
@@ -95,8 +93,8 @@ public class Juego {
                 }
             }
             fileReader.close();
-            outStream.println();
-            outStream.println(ansi().fg(GREEN).a("[*] ¡Tablero creado con exito!").reset());
+            System.out.println();
+            System.out.println(ansi().fg(GREEN).a("[*] ¡Tablero creado con exito!").reset());
             Thread.sleep(1500);
         } catch (Exception e) {
             
@@ -104,22 +102,18 @@ public class Juego {
     }
     
     public void jugarPartida() {
-        try {
-        	PrintStream outStream = new PrintStream(System.out, true, "UTF-8");
-            outStream.println(ansi().fg(BLUE).a(""));
-            outStream.println("\t\t\t\t\t\t __                   _____                      ");
-            outStream.println("\t\t\t\t\t\t/\\ \\                 /\\  __`\\                    ");
-            outStream.println("\t\t\t\t\t\t\\ \\ \\         __     \\ \\ \\/\\ \\    ___     __     ");
-            outStream.println("\t\t\t\t\t\t \\ \\ \\  __  /'__`\\    \\ \\ \\ \\ \\  /'___\\ /'__`\\   ");
-            outStream.println("\t\t\t\t\t\t  \\ \\ \\L\\ \\/\\ \\L\\.\\_   \\ \\ \\_\\ \\/\\ \\__//\\ \\L\\.\\_ ");
-            outStream.println("\t\t\t\t\t\t   \\ \\____/\\ \\__/.\\_\\   \\ \\_____\\ \\____\\ \\__/.\\_\\");
-            outStream.println("\t\t\t\t\t\t    \\/___/  \\/__/\\/_/    \\/_____/\\/____/\\/__/\\/_/");
-            outStream.println(ansi().fg(BLUE).a("\n\n").reset());
-            
-            outStream.println("Bienvenidos al juego de La Oca, antes de comenzar a jugar haremos unas pequeñas configuraciones...\n");
-        } catch(Exception e) {
-        	
-        }
+    	System.out.println(ansi().fg(BLUE).a(""));
+        System.out.println("\t\t\t\t\t\t __                   _____                      ");
+        System.out.println("\t\t\t\t\t\t/\\ \\                 /\\  __`\\                    ");
+        System.out.println("\t\t\t\t\t\t\\ \\ \\         __     \\ \\ \\/\\ \\    ___     __     ");
+        System.out.println("\t\t\t\t\t\t \\ \\ \\  __  /'__`\\    \\ \\ \\ \\ \\  /'___\\ /'__`\\   ");
+        System.out.println("\t\t\t\t\t\t  \\ \\ \\L\\ \\/\\ \\L\\.\\_   \\ \\ \\_\\ \\/\\ \\__//\\ \\L\\.\\_ ");
+        System.out.println("\t\t\t\t\t\t   \\ \\____/\\ \\__/.\\_\\   \\ \\_____\\ \\____\\ \\__/.\\_\\");
+        System.out.println("\t\t\t\t\t\t    \\/___/  \\/__/\\/_/    \\/_____/\\/____/\\/__/\\/_/");
+        System.out.println(ansi().fg(BLUE).a("\n\n").reset());
+        
+        System.out.println("Bienvenidos al juego de La Oca, antes de comenzar a jugar haremos unas pequeñas configuraciones...\n");
+        
         this.configurarTablero();
         ListaFichas.getListaFichas().jugar();
     }
@@ -127,6 +121,7 @@ public class Juego {
      * Metodo principal del juego, aqui es donde comienza todo la partida.
      */
     public static void main(String[] args) {
+    	ListaFichas.getListaFichas().limpiarConsola();
         Juego.getJuego().jugarPartida();
     }
 
