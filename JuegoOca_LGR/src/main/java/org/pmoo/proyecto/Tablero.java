@@ -181,25 +181,6 @@ public class Tablero {
             int pos = 1;
             while ((strCurrentLine = fileReader.readLine()) != null) {
                 String data[] = strCurrentLine.split("_");
-                /*if (pNombreCasilla == "Normal" && data[0].equals("Normal")) {
-                    posicionesCasilla.append(pos + ", ");
-                } else if (pNombreCasilla == "Muerte" && data[0].equals("Muerte")) {
-                    posicionesCasilla.append(pos + ", ");
-                } else if (pNombreCasilla == "Oca" && data[0].equals("Oca")) {
-                    posicionesCasilla.append(pos + ", ");
-                } else if (pNombreCasilla == "Puente" && data[0].equals("Puente")) {
-                    posicionesCasilla.append(pos + ", ");
-                } else if (pNombreCasilla == "Dado" && data[0].equals("Dado")) {
-                    posicionesCasilla.append(pos + ", ");
-                } else if (pNombreCasilla == "Carcel" && data[0].equals("Carcel")) {
-                    posicionesCasilla.append(pos + ", ");
-                } else if (pNombreCasilla == "Pension" && data[0].equals("Pension")) {
-                    posicionesCasilla.append(pos + ", ");
-                } else if (pNombreCasilla == "Pozo" && data[0].equals("Pozo")) {
-                    posicionesCasilla.append(pos + ", ");
-                } else if (pNombreCasilla == "Victoria" && data[0].equals("Victoria")) {
-                    posicionesCasilla.append(pos + ", ");
-                }*/
                 if (data[0].equals(pNombreCasilla)) {
                     posicionesCasilla.append(pos + ", ");
                 }
