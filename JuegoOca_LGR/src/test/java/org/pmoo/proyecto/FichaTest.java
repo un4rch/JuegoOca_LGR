@@ -30,4 +30,59 @@ public class FichaTest {
 	public void test() {
 
 	}
+	
+	
+	
+	
+    Ficha fichAct = new Ficha("Ficha de prueba");       
+
+    fichAct.sobreescribirPosicion(24);
+    System.out.println("Por favor, ingrese en orden, un 2, un 1 y un 1 por el teclado.");
+    fichAct.jugar();
+    assertEquals(fichAct.getPosicion(),60);
+    
+    fichAct = new Ficha("Ficha de prueba");
+    fichAct.sobreescribirPosicion(24);
+    System.out.println("Por favor, ingrese en orden, un 2 y un 3 por el teclado.");
+    fichAct.jugar();
+    assertEquals(fichAct.getTurnosEspera(),3);
+    
+    fichAct = new Ficha("Ficha de prueba");
+    fichAct.sobreescribirPosicion(51);
+    System.out.println("Por favor, ingrese en orden, un 2 y un 5 por el teclado.");
+    fichAct.jugar();
+    assertEquals(fichAct.getTurnosEspera(),2);
+    
+    fichAct = new Ficha("Ficha de prueba");
+    fichAct.sobreescribirPosicion(24);
+    System.out.println("Por favor, ingrese en orden, un 2 y un 5 por el teclado.");
+    fichAct.jugar();
+    assertEquals(fichAct.getPosicion(),1);
+    
+    fichAct = new Ficha("Ficha de prueba");
+    fichAct.sobreescribirPosicion(51);
+    System.out.println("Por favor, ingrese en orden, un 5 por el teclado.");
+    fichAct.jugar();
+    assertEquals(fichAct.getTurnosEspera(),3);
+    
+    fichAct = new Ficha("Ficha de prueba");
+    fichAct.sobreescribirPosicion(30);
+    System.out.println("Por favor, ingrese en orden, un 1 por el teclado.");
+    fichAct.jugar();
+    assertEquals(fichAct.getTurnosEspera(),2);
+    
+    fichAct = new Ficha("Ficha de prueba");
+    fichAct.sobreescribirPosicion(17);
+    System.out.println("Por favor, ingrese en orden, un 2 por el teclado.");
+    fichAct.jugar();
+    assertEquals(fichAct.getTurnosEspera(),1);
+    
+    fichAct = new Ficha("Ficha de prueba");
+    fichAct.sobreescribirPosicion(62);
+    System.out.println("Por favor, ingrese en orden, un 3 por el teclado.");
+    fichAct.jugar();
+    assertEquals(fichAct.getPosicion(),61);
+    assertEquals(fichAct.getHeGanado(),false);
+
+
 }
