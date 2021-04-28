@@ -16,4 +16,16 @@ public class TecladoTest {
 	public void tearDown() throws Exception {
 	}
 	
+	@Test
+	public void testPedirOpcion() {
+		AssertNotNull(Teclado.getTeclado());
+		System.out.println("Se va a introducir un valor negativo, despu�s un valor mayor que 4 y finalmente un valor entre 1 y 4");
+		Teclado.getTeclado().pedirOpcion(4);
+		System.out.println("Se va introducir un valor negativo, despu�s un valor mayor que 2 y finalmente un valor entre 1 y 2");
+		Teclado.getTeclado().pedirOpcion(2);
+		System.out.println("Se va a introducir un char y despu�s un valor entre uno y dos");
+		Teclado.getTeclado().pedirOpcion(2);
+		System.out.println("Prueba sobre terminar la partida");
+		System.out.println("Esta prueba no se realiza ya que se puede comprobar mucho m�s facilmente ejecutando directamente el programa");
+	}
 }
