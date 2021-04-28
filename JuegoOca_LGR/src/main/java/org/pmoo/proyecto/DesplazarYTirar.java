@@ -32,7 +32,14 @@ public class DesplazarYTirar extends Casilla{
             	ListaFichas.getListaFichas().terminarPartida();
             }
             pFicha.sobreescribirPosicion(this.nuevaPosicion);
-            pFicha.jugar();                                       // que implica : tirarDado ()  : int
+            if(pFicha.getPosicion()==63){
+            	Casilla casillaAct = ListaCasillas.getListaCasillas().queHayEnPosicion(pFicha.getPosicion()-1);
+                casillaAct.cumplirMiFuncion(pFicha);
+            }
+            else {
+            	pFicha.jugar();
+            }
+                                                                  // que implica : tirarDado ()  : int
                                                                   //               getPosicion () : int
                                                                   //               queHayEnPosicion (int) : Casilla 
                                                                   //               cumplirMiFuncion (Ficha)  
