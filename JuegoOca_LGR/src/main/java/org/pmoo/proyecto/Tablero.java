@@ -193,4 +193,8 @@ public class Tablero {
         }
         return strCurrentLine;
     }
+    
+    public void resetearTablero() {                       //Solo se utiliza para las JUnit
+        this.lista = new ArrayList<Casilla>();
+    } 
 }
