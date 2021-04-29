@@ -226,7 +226,11 @@ public class FichaTest {
 /*  JUnit 29: Al tirar el dado caer en la Muerte. 
 	El jugador vuelve a la primera casilla, se imprime un mensaje por pantalla indicando en que casillas ha caído y finaliza su turno.*/
     
-    
+    fichAct = new Ficha("Ficha de prueba");
+    fichAct.sobreescribirPosicion(52);
+    System.out.println("Por favor, ingrese un 6 por el teclado.");
+    fichAct.jugar();
+    assertEquals(fichAct.getPosicion(),1);
     
     
     
@@ -235,7 +239,12 @@ public class FichaTest {
 	El boolean de la Ficha heGandado pasa a True. Se imprime por pantalla un texto que indica que el jugador ha sido ganador,  y finaliza el juego.*/ 
  
     
-    
+    fichAct = new Ficha("Ficha de prueba");
+    fichAct.sobreescribirPosicion(57);
+    System.out.println("Por favor, ingrese un 6 por el teclado.");
+    fichAct.jugar();
+    assertEquals(fichAct.getPosicion(),63);
+    assertEquals(fichAct.getHeGanado(),true);
     
    
 /*  JUnit 31: Al tirar el dado caer en la Cárcel. 
