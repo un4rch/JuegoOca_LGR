@@ -146,6 +146,7 @@ public class FichaTest {
 	assertEquals(fichAct.getPosicion(),28);	
 	
 	
+	
 /*  JUnit 16: Al tirar el dado caer en un Puente, al volver a tirar caer en los Dados. 
     !! EL DADO DEBERÍA SACAR 14 en tablero clásico
 	Se desplaza a los otros Dados, vuelve a tirar el dado, cumple la función de la casilla en la que caiga, imprime un mensaje por pantalla y finaliza su turno.*/
@@ -222,7 +223,6 @@ public class FichaTest {
     
     
     
-    
 /*  JUnit 29: Al tirar el dado caer en la Muerte. 
 	El jugador vuelve a la primera casilla, se imprime un mensaje por pantalla indicando en que casillas ha caído y finaliza su turno.*/
     
@@ -234,17 +234,16 @@ public class FichaTest {
     
     
     
-    
 /*  JUnit 30: Al tirar el dado caer en la Victoria. 
 	El boolean de la Ficha heGandado pasa a True. Se imprime por pantalla un texto que indica que el jugador ha sido ganador,  y finaliza el juego.*/ 
  
-    
     fichAct = new Ficha("Ficha de prueba");
     fichAct.sobreescribirPosicion(57);
     System.out.println("Por favor, ingrese un 6 por el teclado.");
     fichAct.jugar();
     assertEquals(fichAct.getPosicion(),63);
     assertEquals(fichAct.getHeGanado(),true);
+   
     
    
 /*  JUnit 31: Al tirar el dado caer en la Cárcel. 
@@ -268,8 +267,6 @@ public class FichaTest {
     assertEquals(fichAct.getTurnosEspera(),2);
     
     
-    
-
 
 /*  JUnit 33: Al tirar el dado caer en la Posada. 
     La ficha del jugador que cae en esta casilla aumenta los turnos de espera a 1 y se imprime por pantalla un texto que indica lo sucedido*/
@@ -279,10 +276,8 @@ public class FichaTest {
     System.out.println("Por favor, ingrese un 2 por el teclado.");
     fichAct.jugar();
     assertEquals(fichAct.getTurnosEspera(),1);
+        
     
-    
-    
-
 
 /*  JUnit 34:Tirar el dado cerca de la casilla Victoria y pasarse del valor necesario. 
     La ficha del jugador rebota en la última casilla y retrocede tantas casillas como números hasta cubrir el valor obtenido del dado (retrodecer)*/
@@ -294,6 +289,5 @@ public class FichaTest {
     assertEquals(fichAct.getPosicion(),61);
     assertEquals(fichAct.getHeGanado(),false);
 
-
-
+    
 }
