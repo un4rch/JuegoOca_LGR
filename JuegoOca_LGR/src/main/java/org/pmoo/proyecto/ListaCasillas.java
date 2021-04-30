@@ -28,4 +28,8 @@ public class ListaCasillas {
     public Casilla queHayEnPosicion(int pPosicion) {
         return this.lista.get(pPosicion);
     }
+    
+    public void resetearTablero() {                       //Solo se utiliza para las JUnit
+        this.lista = new ArrayList<Casilla>();
+    }
 }

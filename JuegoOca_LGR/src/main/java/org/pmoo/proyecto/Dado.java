@@ -1,5 +1,7 @@
 package org.pmoo.proyecto;
 import java.lang.Math;
+import static org.fusesource.jansi.Ansi.ansi;
+import static org.fusesource.jansi.Ansi.Color.YELLOW;
 
 public class Dado {
 	//atributos

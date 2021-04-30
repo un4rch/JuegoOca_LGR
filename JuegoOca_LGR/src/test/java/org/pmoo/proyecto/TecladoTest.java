@@ -18,7 +18,7 @@ public class TecladoTest {
 	
 	@Test
 	public void testPedirOpcion() {
-		AssertNotNull(Teclado.getTeclado());
+		assertNotNull(Teclado.getTeclado());
 		System.out.println("Se va a introducir un valor negativo, despu�s un valor mayor que 4 y finalmente un valor entre 1 y 4");
 		Teclado.getTeclado().pedirOpcion(4);
 		System.out.println("Se va introducir un valor negativo, despu�s un valor mayor que 2 y finalmente un valor entre 1 y 2");
