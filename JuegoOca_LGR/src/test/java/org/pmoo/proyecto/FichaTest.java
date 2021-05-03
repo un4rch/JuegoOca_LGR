@@ -283,6 +283,23 @@ public class FichaTest {
 	    fichAct.jugar();
 	    assertEquals(fichAct.getPosicion(),61);
 	    assertEquals(fichAct.getHeGanado(),false);
+	/*  JUnit 35:Tirar el dado y caer en una casilla de esperar turnos para comprobar si no juega el turno.
+    	    La ficha va a aumentar sus turnos de espera y se le van a reducir despues de cada jugada.*/
+
+            fichAct = new Ficha("Ficha de prueba");
+            fichAct.sobreescribirPosicion(18);
+            System.out.println("Por favor, ingrese un 1 por el teclado.");
+            fichAct.jugar();
+            assertEquals(fichAct.getPosicion(),19);
+            assertEquals(fichaAct.getTurnosEspera(),1);
+            System.out.println("Por favor, ingrese un valor positivo");
+            fichAct.jugar();
+            assertEquals(fichAct.getPosicion(),19);
+            assertEquals(fichaAct.getTurnosEspera(),0);
+            System.out.println("Por favor, ingrese un 2 por el teclado.");
+            fichAct.jugar();
+            assertEquals(fichAct.getPosicion(),21);
+            assertEquals(fichaAct.getTurnosEspera(),0);
 	}
  
 }
