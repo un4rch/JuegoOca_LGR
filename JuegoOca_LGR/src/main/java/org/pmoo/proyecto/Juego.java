@@ -73,7 +73,7 @@ public class Juego {
             while ((strCurrentLine = fileReader.readLine()) != null) {    
                 String data[] = strCurrentLine.split("_");
                 if (data[0].equals("Muerte")) {
-                    listaCasillas.anadirCasilla(new Muerte("Has caido en la Muerte e irás de vuelta al Inicio"));
+                    listaCasillas.anadirCasilla(new Muerte("Has caido en la Muerte e iras de vuelta al Inicio"));
                 } else if (data[0].equals("Oca")) {
                     listaCasillas.anadirCasilla(new DesplazarYTirar("De oca a oca y tiro porque me toca", Integer.parseInt(data[1])));
                 } else if (data[0].equals("Puente")) {
@@ -83,9 +83,9 @@ public class Juego {
                 } else if (data[0].equals("Carcel")) {
                     listaCasillas.anadirCasilla(new Espera("Has caido en la carcel y tendrás que esperar 3 turnos", Integer.parseInt(data[1])));
                 } else if (data[0].equals("Pension")) {
-                    listaCasillas.anadirCasilla(new Espera("Has caido en la pension y tendrás que esperar 1 turno", Integer.parseInt(data[1])));
+                    listaCasillas.anadirCasilla(new Espera("Has caido en la pension y tendras que esperar 1 turno", Integer.parseInt(data[1])));
                 } else if (data[0].equals("Pozo")) {
-                    listaCasillas.anadirCasilla(new Espera("Has caido en el pozo y tendrás que esperar 2 turnos", Integer.parseInt(data[1])));
+                    listaCasillas.anadirCasilla(new Espera("Has caido en el pozo y tendras que esperar 2 turnos", Integer.parseInt(data[1])));
                 } else if (data[0].equals("Victoria")) {
                     listaCasillas.anadirCasilla(new Victoria("Has caido en la victoria, felicidades, has ganado"));
                 } else {
